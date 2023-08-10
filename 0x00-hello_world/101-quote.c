@@ -1,12 +1,11 @@
 #include <unistd.h>
 
 /**
- * main - Entry point
+ * main - Entry point of the program
  *
- * Description: A c program that prints a quote using write function
- * write(int fd, const void *buf, size_t)
+ * Description: This program print a quote using the write function
  *
- * Return 1 (Not Success)
+ * Return: Always returns 1 to indicate successful execution.
  */
 
 int main(void)

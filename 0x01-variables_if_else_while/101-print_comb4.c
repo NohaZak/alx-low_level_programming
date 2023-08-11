@@ -11,37 +11,29 @@
 
 int main(void)
 {
-	int a = 0;
-	int b, c;
+	int a;
+	int b;
+	int c;
 
-	while (a <= 9)
+	for (a = 0; a <= 9; a++)
 	{
-		b = 0;
-		while (b <= 9)
-			c = 0;
+		for (b = 0; b <= 9; b++)
 		{
-			while (c <= 9)
+			for (c = 0; c <= 9; c++)
 			{
-				if (a != b &&
-					a < b &&
-					b != c &&
-					b < c)
+				if (c > b && b > a)
 				{
 					putchar(a + 48);
 					putchar(b + 48);
 					putchar(c + 48);
-
-					if (a + b + c != 24)
+					if (a != 7 || b != 8 || c != 9)
 					{
 						putchar(',');
 						putchar(' ');
 					}
 				}
-				c++;
 			}
-			b++;
 		}
-		a++;
 	}
 	putchar('\n');
 	return (0);

@@ -32,8 +32,10 @@ int main(void)
 					putchar(c + 48);
 
 					if (a + b + c != 24)
+					{
 						putchar(',');
 						putchar(' ');
+					}
 				}
 				c++;
 			}

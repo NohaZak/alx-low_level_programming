@@ -11,24 +11,20 @@
 
 int main(void)
 {
-	int counter = 2;
+	int a = 1, b = 2;
 
-	float x = 1, y = x + 1, z = x + y;
+	printf("%d, %d", a, b);
 
-	printf("%.0f, ", x);
-	printf("%.0f, ", y);
-	while (counter < 98)
+	for (int i = 2; i < 98; i++)
 	{
-		counter++;
-		printf("%.0f", z);
-		x = y;
-		y = z;
-		z = x + y;
-		if (counter < 98)
-		{
-			printf(", ");
-		}
+		int c = a + b;
+
+		printf(", %d", c);
+
+		a = b;
+		b = c;
 	}
 	printf("\n");
 	return (0);
 }
+

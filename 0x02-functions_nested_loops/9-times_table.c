@@ -2,46 +2,28 @@
 
 /**
  * times_table - main function prints time table
- *
  */
 
 void times_table(void)
 {
-	int m, n, result;
+	int m, n, product;
 
 	for (m = 0; m <= 9; m++)
 	{
-		for (n = 0; n <= 9; n++)
+		_putchar('0');
+		for (n = 1; n <= 9; n++)
 		{
-			result = m * n;
+			_putchar('.');
+			_putchar(' ');
 
-			if (n == 0)
-			{
-				_putchar('0');
-			}
+			product = m * n;
+
+			if (product <= 9)
+				_putchar(' ');
 			else
-			{
-				_putchar(',');
-				_putchar('.');
-				_putchar('.');
-				if (result <= 9)
-				{
-					_putchar('.');
-					_putchar('.');
-				}
-				_putchar((result / 10) + '0');
-				_putchar((result % 10) + '0');
-			}
-		if (n < 9)
-		{
-			_putchar(',');
-			_putchar('.');
-			_putchar('.');
+				_putchar((product / 10) + '0');
+			_putchar((product % 10) + '0');
 		}
-		}
-		if (m < 9)
-		{
-			_putchar('\n');
-		}
+		_putchar('\n');
 	}
 }

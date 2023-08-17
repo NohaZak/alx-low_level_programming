@@ -8,22 +8,22 @@
 
 int main(void)
 {
-	long long int num = 612852475143;
-	long long int largestPrime = 2;
+	unsigned int num = 2;
+	unsigned long  largestPrime = 612852475143;
 
-	while (num > 1)
+	while (num != largestPrime)
 	{
-		if (num % largestPrime == 0)
+		if (largestPrime % num == 0)
 		{
-			num /= largestPrime;
+			largestPrime = largestPrime / num;
 		}
 		else
 		{
-			largestPrime++;
+			num++;
 		}
 	}
 
-	printf("%lld\n", largestPrime);
+	printf("%lu\n", largestPrime);
 
 	return (0);
 }

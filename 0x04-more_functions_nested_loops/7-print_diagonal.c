@@ -18,9 +18,9 @@ void print_diagonal(int n)
 	}
 	else
 	{
-		for (diagonal = 1; diagonal < n; diagonal++)
+		for (diagonal = 0; diagonal < n; diagonal++)
 		{
-			for (space = 1; space < diagonal; space++)
+			for (space = 0; space < diagonal; space++)
 			{
 				_putchar(' ');
 			}

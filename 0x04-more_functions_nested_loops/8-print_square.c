@@ -3,9 +3,7 @@
 /**
  * print_square - prints a square, followed by a new line
  *
- * @size: paramater
- *
- * Return: void
+ * @size: integer to set size
  */
 
 void print_square(int size)
@@ -18,9 +16,9 @@ void print_square(int size)
 	}
 	else
 	{
-		for (length < 1; length < size; length++)
+		for (length = 0; length < size; length++)
 		{
-			for (width = 1; width < length; width++)
+			for (width = 0; width < size; width++)
 			{
 				_putchar('#');
 			}

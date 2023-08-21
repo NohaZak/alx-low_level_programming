@@ -10,11 +10,11 @@
 
 int main(void)
 {
-	srand(time(NULL));
-
 	int password_length = 10;
 	int i;
 	char password[11];
+
+	srand(time(NULL));
 
 	for (i = 0; i < password_length; i++)
 	{

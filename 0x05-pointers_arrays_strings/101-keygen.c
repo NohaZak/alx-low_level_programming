@@ -10,21 +10,18 @@
 
 int main(void)
 {
-	int password_length = 10;
-	int i;
-	char password[11];
+	int password_length;
+	char password;
 
 	srand(time(NULL));
 
-	for (i = 0; i < password_length; i++)
+	while (password_length <= 2645)
 	{
-		password[i] = rand() % (126 - 33 + 1) + 33;
+		password = rand() % 128;
+		password_length += password;
+		putchar(password);
 	}
-
-	password[password_length] = '\0';
-
-	printf("%s", password);
-
+	putchar(2772 - password_length);
 	return (0);
 }
 

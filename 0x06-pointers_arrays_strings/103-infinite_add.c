@@ -6,7 +6,7 @@
  * @n1: 1st number
  * @n2: 2nd number
  * @r: result
- * @size_r:
+ * @size_r: result length
  *
  * Return: sum
  */

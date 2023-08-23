@@ -28,8 +28,10 @@ int isDelimiter(char d)
 	char delimiter[] = " ;\t\n,.!?\"(){}";
 
 	for (s = 0; s < 12; s++)
+	{
 		if (d == delimiter[s])
 			return (1);
+	}
 	return (0);
 }
 

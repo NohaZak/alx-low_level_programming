@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcat - function that swaps  strings
+ * _strcat - function that swaps strings
  *
  * @dest: destination input
  * @src: source input
@@ -18,9 +18,11 @@ char *_strcat(char *dest, char *src)
 	while (dest[st])
 		st++;
 
-	for (st2 = 0; src[st2] ; st2++)
+	for (st2 = 0; src[st2]; st2++)
+	{
 		dest[st] = src[st2];
 		st++;
+	}
 
 	return (dest);
 }

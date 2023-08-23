@@ -21,11 +21,10 @@ char *leet(char *l)
 		{
 			if (*l == key[i] || *l == key[i] + 32)
 			{
-				*l + 48 + value[i];
+				*l = 48 + value[i];
 			}
 		}
 		l++;
 	}
-
 	return (lp);
 }

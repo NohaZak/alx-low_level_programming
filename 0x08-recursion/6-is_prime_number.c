@@ -5,6 +5,7 @@
  * is_prime_number - check prime number
  *
  * @n: number
+ * @notn: number
  *
  * Return: 1 for prime 0 for non prime
  */

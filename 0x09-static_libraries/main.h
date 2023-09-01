@@ -4,7 +4,7 @@
 /**
  * _putchar - prints the character to standard output
  *@c: character to be printed
- * 
+ *
  * Return: Always return 1 or 0
  */
 

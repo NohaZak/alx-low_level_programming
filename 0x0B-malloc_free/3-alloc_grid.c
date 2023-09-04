@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * **allocgrid - pointer to 2-dimensional array
+ * **alloc_grid - pointer to 2-dimensional array
  *
  * @width: int
  * @height: int
@@ -9,7 +9,7 @@
  * Return: array
  */
 
-int **allocgrid(int width, int height)
+int **alloc_grid(int width, int height)
 {
 	int **t, i, j;
 

@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 #define ERR_MSG "Error"
 
@@ -81,7 +83,7 @@ int main(int argc, char *argv[])
 	{
 		d1 = s1[l] - '0';
 		carry = 0;
-		for (l2 = l2 - 1; l2 >= 0; l2--)
+		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
 		{
 			d2 = s2[l2] - '0';
 			carry += sum[l1 + l2 + 1] + (d1 * d2);

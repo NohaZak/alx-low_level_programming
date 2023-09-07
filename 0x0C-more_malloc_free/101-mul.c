@@ -81,7 +81,7 @@ int main(int argc, char *argv[])
 		sum[i] = 0;
 	for (l1 = l1 - 1; l1 >= 0; l1--)
 	{
-		d1 = s1[l] - '0';
+		d1 = s1[l1] - '0';
 		carry = 0;
 		for (l2 = _strlen(s2) - 1; l2 >= 0; l2--)
 		{

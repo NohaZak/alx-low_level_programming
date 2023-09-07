@@ -1,95 +1,106 @@
 #include "main.h"
 
-/**
- * _puts - prints string
- *
- * @str: pointer
- *
- * Return: void
- */
-
-void _puts(char *str)
-{
-	int i = 0;
-
-	while (str[i])
-	{
-		_putchar(str[i]);
-		i++;
-	}
-}
+#define ERR_MSG "Error"
 
 /**
- * _atoi - convert string to integer
+ * is_digit - check if non-digit
  *
  * @s: string
  *
- * Return: int
+ * Return: 0, 1
  */
 
-int _atoi(const char *s)
+int is_digit(char *s)
 {
-	int sign = 1;
-	unsigned long int resp = 0, fstnum, i;
+	int i = 0;
 
-	for (fstnum = 0; !(s[fstnum] >= 48 && s[fstnum] <= 57); fstnum++)
+	while (s[i])
 	{
-		if (s[fstnum] == '-')
-		{
-			sign *= -1;
-		}
+		if (s[i] < '0' || s[i] > '9')
+			return (0);
+		i++;
 	}
-
-	for (i = fstnum; s[i] >= 48 && s[i] <= 57; i++)
-	{
-		resp *= 10;
-		resp += (s[i] - 48);
-	}
-
-	return (sign * resp);
+	return (1);
 }
 
 /**
- * print_int - prinnts integer
+ * _strlen - returns length
  *
- * @n: int
+ * @s: string
  *
- * Return: void
+ * Return: length of string
  */
 
-void print_int(unsigned long int n)
+int _strlen(char *s)
 {
-	unsigned long int div = 1, i, resp;
+	int i = 0;
 
-	for (i = 0; n / div > 9; i++, div *= 10)
-		;
-	for (; div >= 1; n %= div, div /= 10)
+	while (s[i] != '\0')
 	{
-		resp = n / div;
-		_putchar('0' + resp);
+		i++;
 	}
+	return (i);
 }
 
 /**
- * main - print result
+ * error - handle main errors
+ */
+
+void error(void)
+{
+	printf("Error\n");
+	exit(98);
+}
+
+/**
+ * main - multiply 2 digits
  *
- * @argc: int
- * @argv: list
+ * @argc: count
+ * @argv: vector
  *
  * Return: 0
  */
 
-int main(int argc, char const *argv[])
+int main(int argc, char *argv[])
 {
-	(void)argc;
+	char *s1, *s2;
+	int l1, l2, l, i, carry, d1, d2, *sum, a = 0;
 
-	if (argc != 3)
+	s1 = argv[1], s2 = argv[2];
+	if (argc != 3 || !is_digit(s1) || !is_digit(s2))
+		error();
+	l1 = _strlen(s1);
+	l2 = _strlen(s2);
+	l = l1 + l2 + 1;
+	sum = malloc(sizeof(int) * l);
+		if (!sum)
+			return (1);
+	for (i = 0; i <= l1 + l2; i++)
+		sum[i] = 0;
+	for (l1 = l1 - 1; l1 >= 0; l1--)
 	{
-		_puts("Error ");
-		exit(98);
+		d1 = s1[l] - '0';
+		carry = 0;
+		for (l2 = l2 - 1; l2 >= 0; l2--)
+		{
+			d2 = s2[l2] - '0';
+			carry += sum[l1 + l2 + 1] + (d1 * d2);
+			sum[l1 + l2 + 1] = carry % 10;
+			carry /= 10;
+		}
+		if (carry > 0)
+		sum[l1 + l2 + 1] += carry;
 	}
-	print_int(_atoi(argv[1]) * _atoi(argv[2]));
+	for (i = 0; i < l - 1; i++)
+	{
+		if (sum[i])
+			a = 1;
+		if (a)
+			_putchar(sum[i] + '0');
+	}
+	if (!a)
+		_putchar('0');
 	_putchar('\n');
-
+	free(sum);
 	return (0);
 }

@@ -1,4 +1,4 @@
-#include "3-calq.h"
+#include "3-calc.h"
 
 /**
  * main - the main function
@@ -8,7 +8,7 @@
  *
  * Return: 0
  */
-int main(int __attribute__((__unused__))agrc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	int no1, no2;
 	char *op;

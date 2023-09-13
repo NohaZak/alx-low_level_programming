@@ -1,26 +1,41 @@
 #include "3-cal.h"
 
-/** main - the main function
+/**
+ * main - the main function
  *
  * @argc: count
  * @argv: vector
  *
  * Return: 0
  */
-int main(int argc, char **argv)
+int main(int __attribute__((__unused__))agrc, char *argv[])
 {
-	int (*op_func)(int, int), a, b;
+	int no1, no2;
+	char *op;
 
 	if (argc != 4)
-		printf("Error\n"), exit(98);
-	a = atoi(argv[1]);
-	b = atoi(argv[3]);
+	{
+		printf("Error\n");
+		exit(98);
+	}
 
-	op_func = get_op_func(argv[2]);
-	if (!op_func)
-		printf("Error\n"), exit(99);
-	if (!b && (argv[2][0] == '/' || argv[2][0] == '%'))
-		printf("Error\n"), exit(100);
-	printf("%d\n", op_func(a,b));
+	no1 = atoi(argv[1]);
+	op = argv[2];
+	no2 = atoi(argv[3]);
+
+	if (get_op_func(op) == NULL || op[1] != '\0')
+	{
+		printf("Error\n");
+		exit(99);
+	}
+
+	if ((*op == '/' && no2 == 0) ||
+		(*op == '%' && no2 == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	printf("%d\n", get_op_func(op)(no1, no2));
+
 	return (0);
 }

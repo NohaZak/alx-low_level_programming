@@ -1,6 +1,7 @@
 #include "function_pointers.h"
 
-/** print_name - entry point of program function that prints a name
+/**
+ * print_name - entry point of program function that prints a name
  *
  * @name: name
  * @f: function pointer

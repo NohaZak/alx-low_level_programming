@@ -1,11 +1,13 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * malloc_checked -  function that allocates memory using malloc
  *
  * @b: integer
  *
- * Return: pointer for success, 98 for fail
+ * Return: NULL
  */
 
 void *malloc_checked(unsigned int b)
@@ -13,6 +15,7 @@ void *malloc_checked(unsigned int b)
 	void *m;
 
 	m = malloc(b);
+
 	if (m == NULL)
 		exit(98);
 
